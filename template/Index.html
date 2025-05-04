@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Malayalam Trending Albums</title>
+</head>
+<body>
+    <h1>Trending Malayalam Albums</h1>
+    <ul>
+        {% for album in albums %}
+            <li>
+                <strong>{{ album.title }}</strong><br>
+                <img src="{{ album.image }}" width="100"><br>
+                <!-- Link to open album (we can't directly get MP3 without extra API call) -->
+                <a href="https://www.jiosaavn.com{{ album.perma_url }}" target="_blank">Listen on JioSaavn</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
